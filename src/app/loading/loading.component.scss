@@ -1,0 +1,1173 @@
+/* ========================================= */
+/* PAGE PRINCIPALE */
+/* ========================================= */
+
+.loading-page {
+
+  /* Permet de positionner les éléments décoratifs. */
+  position: relative;
+
+  /* Prend toute la largeur disponible. */
+  width: 100%;
+
+  /* Prend au minimum toute la hauteur de l'écran. */
+  min-height: 100vh;
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Centre verticalement le contenu. */
+  align-items: center;
+
+  /* Centre horizontalement le contenu. */
+  justify-content: center;
+
+  /* Empêche les éléments de dépasser de l'écran. */
+  overflow: hidden;
+
+  /* Définit le fond clair de la page. */
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(220, 0, 0, 0.10),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(20, 75, 180, 0.10),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(245, 190, 40, 0.08),
+      transparent 32%
+    ),
+
+    #f8fafc;
+
+  /* Définit la police générale. */
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  /* Définit la couleur principale du texte. */
+  color: #111827;
+}
+
+
+/* ========================================= */
+/* FORMES DÉCORATIVES ANIMÉES */
+/* ========================================= */
+
+.background-shapes {
+  /* Place les décorations sur toute la page. */
+  position: absolute;
+
+  /* Étend la zone sur tout l'écran. */
+  inset: 0;
+
+  /* Empêche les décorations de recevoir les clics. */
+  pointer-events: none;
+
+  /* Rend les décorations légèrement plus visibles. */
+  opacity: 1;
+}
+
+
+/* Style commun des formes. */
+.shape {
+  /* Permet de déplacer chaque forme indépendamment. */
+  position: absolute;
+
+  /* Rend les formes bien visibles. */
+  opacity: 0.55;
+
+  /* Ajoute une légère profondeur. */
+  filter: blur(0.5px);
+
+  /* Ajoute une petite ombre. */
+  box-shadow:
+    0 15px 35px rgba(17, 24, 39, 0.10);
+}
+
+
+/* ========================================= */
+/* FORME ROUGE EN HAUT À GAUCHE */
+/* ========================================= */
+
+.shape-1 {
+
+  /* Définit la largeur. */
+  width: 260px;
+
+  /* Définit la hauteur. */
+  height: 260px;
+
+  /* Position verticale. */
+  top: -70px;
+
+  /* Position horizontale. */
+  left: -50px;
+
+  /* Rend la forme ronde. */
+  border-radius: 50%;
+
+  /* Dégradé rouge visible. */
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 0, 0, 0.25),
+      rgba(220, 0, 0, 0.08) 65%,
+      transparent 75%
+    );
+
+  /* Anime la forme. */
+  animation:
+    floatOne
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+/* ========================================= */
+/* FORME BLEUE EN HAUT À DROITE */
+/* ========================================= */
+
+.shape-2 {
+
+  /* Définit la largeur. */
+  width: 230px;
+
+  /* Définit la hauteur. */
+  height: 230px;
+
+  /* Position verticale. */
+  top: 5%;
+
+  /* Position horizontale. */
+  right: -55px;
+
+  /* Crée une forme arrondie. */
+  border-radius: 45%;
+
+  /* Dégradé bleu visible. */
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 78, 210, 0.23),
+      rgba(0, 78, 210, 0.07) 65%,
+      transparent 75%
+    );
+
+  /* Anime la forme. */
+  animation:
+    floatTwo
+    9s
+    ease-in-out
+    infinite;
+}
+
+
+/* ========================================= */
+/* FORME ROUGE EN BAS À GAUCHE */
+/* ========================================= */
+
+.shape-3 {
+
+  /* Définit la largeur. */
+  width: 190px;
+
+  /* Définit la hauteur. */
+  height: 190px;
+
+  /* Position verticale. */
+  bottom: 3%;
+
+  /* Position horizontale. */
+  left: 4%;
+
+  /* Rend la forme ronde. */
+  border-radius: 50%;
+
+  /* Dégradé rouge visible. */
+  background:
+    radial-gradient(
+      circle,
+      rgba(190, 0, 0, 0.20),
+      rgba(190, 0, 0, 0.06) 65%,
+      transparent 75%
+    );
+
+  /* Anime la forme. */
+  animation:
+    floatThree
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+/* ========================================= */
+/* FORME BLEUE EN BAS À DROITE */
+/* ========================================= */
+
+.shape-4 {
+
+  /* Définit la largeur. */
+  width: 160px;
+
+  /* Définit la hauteur. */
+  height: 160px;
+
+  /* Position verticale. */
+  bottom: 8%;
+
+  /* Position horizontale. */
+  right: 5%;
+
+  /* Crée une forme arrondie. */
+  border-radius: 40%;
+
+  /* Dégradé bleu visible. */
+  background:
+    radial-gradient(
+      circle,
+      rgba(20, 75, 180, 0.20),
+      rgba(20, 75, 180, 0.06) 65%,
+      transparent 75%
+    );
+
+  /* Anime la forme dans le sens inverse. */
+  animation:
+    floatTwo
+    8s
+    ease-in-out
+    infinite reverse;
+}
+
+
+/* ========================================= */
+/* CONTENEUR PRINCIPAL */
+/* ========================================= */
+
+.loading-container {
+
+  /* Permet de positionner les éléments internes. */
+  position: relative;
+
+  /* Place le contenu devant les décorations. */
+  z-index: 2;
+
+  /* Définit une largeur responsive. */
+  width: min(680px, 92vw);
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Centre horizontalement. */
+  align-items: center;
+
+  /* Organise les éléments verticalement. */
+  flex-direction: column;
+
+  /* Ajoute un espace entre les éléments. */
+  gap: 18px;
+
+  /* Ajoute de l'espace intérieur. */
+  padding: 28px 20px;
+}
+
+
+/* ========================================= */
+/* LOGO */
+/* ========================================= */
+
+.logo-container {
+
+  /* Anime l'apparition du logo. */
+  animation: logoAppear 1s ease-out both;
+}
+
+
+.company-logo {
+
+  /* Définit la largeur maximale du logo. */
+  width: min(270px, 75vw);
+
+  /* Conserve automatiquement les proportions. */
+  height: auto;
+
+  /* Mélange légèrement le fond blanc de l'image avec la page. */
+  mix-blend-mode: multiply;
+
+  /* Ajoute une petite ombre. */
+  filter:
+    drop-shadow(
+      0 10px 18px rgba(0, 0, 0, 0.10)
+    );
+}
+
+
+/* ========================================= */
+/* BIENVENUE */
+/* ========================================= */
+
+.welcome {
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Centre verticalement les éléments. */
+  align-items: center;
+
+  /* Ajoute un espace entre les éléments. */
+  gap: 14px;
+
+  /* Espacement des lettres. */
+  letter-spacing: 0.45em;
+
+  /* Compense l'espacement de la dernière lettre. */
+  padding-left: 0.45em;
+
+  /* Rend le texte plus épais. */
+  font-weight: 700;
+
+  /* Définit la taille. */
+  font-size: 13px;
+
+  /* Définit la couleur. */
+  color: #1f2937;
+
+  /* Anime l'apparition. */
+  animation:
+    fadeUp
+    0.9s
+    0.25s
+    ease-out
+    both;
+}
+
+
+/* Ligne décorative. */
+.welcome-line {
+
+  /* Définit la largeur. */
+  width: 52px;
+
+  /* Définit l'épaisseur. */
+  height: 2px;
+
+  /* Utilise le rouge BIG DATA. */
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d40000
+    );
+}
+
+
+/* Inverse le dégradé de la deuxième ligne. */
+.welcome-line:last-child {
+
+  /* Dégradé allant vers la transparence. */
+  background:
+    linear-gradient(
+      90deg,
+      #d40000,
+      transparent
+    );
+}
+
+
+/* ========================================= */
+/* LOADER */
+/* ========================================= */
+
+.loader-wrapper {
+
+  /* Permet de superposer les éléments. */
+  position: relative;
+
+  /* Définit la largeur. */
+  width: 290px;
+
+  /* Définit la hauteur. */
+  height: 290px;
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Centre verticalement. */
+  align-items: center;
+
+  /* Centre horizontalement. */
+  justify-content: center;
+
+  /* Anime l'apparition. */
+  animation:
+    loaderAppear
+    1s
+    0.35s
+    ease-out
+    both;
+}
+
+
+/* Halo lumineux. */
+.loader-halo {
+
+  /* Positionne le halo. */
+  position: absolute;
+
+  /* Définit les marges internes. */
+  inset: 25px;
+
+  /* Rend le halo circulaire. */
+  border-radius: 50%;
+
+  /* Crée une lumière centrale. */
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.96),
+      rgba(255,255,255,0.35) 62%,
+      transparent 70%
+    );
+
+  /* Ajoute une ombre. */
+  box-shadow:
+    0 25px 60px
+    rgba(17, 24, 39, 0.12);
+}
+
+
+/* Grand anneau extérieur. */
+.outer-ring {
+
+  /* Positionne l'anneau. */
+  position: absolute;
+
+  /* Définit les marges. */
+  inset: 5px;
+
+  /* Rend l'anneau circulaire. */
+  border-radius: 50%;
+
+  /* Mélange rouge, noir et bleu. */
+  background:
+    conic-gradient(
+      from 0deg,
+      #d40000,
+      #111827,
+      #0b63ce,
+      #d40000
+    );
+
+  /* Fait tourner l'anneau. */
+  animation:
+    spin
+    8s
+    linear
+    infinite;
+
+  /* Crée un anneau au lieu d'un disque. */
+  -webkit-mask:
+    radial-gradient(
+      circle,
+      transparent 66%,
+      #000 67%
+    );
+
+  mask:
+    radial-gradient(
+      circle,
+      transparent 66%,
+      #000 67%
+    );
+}
+
+
+/* Anneau en pointillés. */
+.dashed-ring {
+
+  /* Positionne l'anneau. */
+  position: absolute;
+
+  /* Définit les marges. */
+  inset: 18px;
+
+  /* Rend l'anneau circulaire. */
+  border-radius: 50%;
+
+  /* Dessine les pointillés. */
+  border:
+    1px dashed
+    rgba(17, 24, 39, 0.28);
+
+  /* Fait tourner l'anneau dans l'autre sens. */
+  animation:
+    spinReverse
+    13s
+    linear
+    infinite;
+}
+
+
+/* ========================================= */
+/* CERCLE SVG */
+/* ========================================= */
+
+.progress-circle {
+
+  /* Positionne le SVG. */
+  position: absolute;
+
+  /* Définit sa position. */
+  inset: 25px;
+
+  /* Définit sa largeur. */
+  width: 240px;
+
+  /* Définit sa hauteur. */
+  height: 240px;
+
+  /* Commence la progression en haut. */
+  transform: rotate(-90deg);
+}
+
+
+/* Cercle gris de fond. */
+.ring-background {
+
+  /* Rend l'intérieur transparent. */
+  fill: none;
+
+  /* Définit la couleur du fond. */
+  stroke: rgba(17, 24, 39, 0.10);
+
+  /* Définit l'épaisseur. */
+  stroke-width: 9;
+}
+
+
+/* Cercle de progression. */
+.ring-progress {
+
+  /* Rend l'intérieur transparent. */
+  fill: none;
+
+  /* Utilise le rouge BIG DATA. */
+  stroke: #d40000;
+
+  /* Définit l'épaisseur. */
+  stroke-width: 9;
+
+  /* Arrondit les extrémités. */
+  stroke-linecap: round;
+
+  /* Rend l'animation fluide. */
+  transition:
+    stroke-dashoffset
+    0.08s
+    linear;
+
+  /* Ajoute un effet lumineux. */
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(212, 0, 0, 0.35)
+    );
+}
+
+
+/* ========================================= */
+/* CENTRE DU LOADER */
+/* ========================================= */
+
+.loader-center {
+
+  /* Positionne le contenu au centre. */
+  position: absolute;
+
+  /* Centre le texte. */
+  text-align: center;
+}
+
+
+/* Pourcentage. */
+.percentage {
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Aligne le nombre et le symbole. */
+  align-items: baseline;
+
+  /* Centre horizontalement. */
+  justify-content: center;
+
+  /* Rend le nombre épais. */
+  font-weight: 800;
+
+  /* Définit la taille. */
+  font-size: 58px;
+
+  /* Définit la couleur. */
+  color: #111827;
+
+  /* Réduit l'espace vertical. */
+  line-height: 1;
+}
+
+
+/* Symbole %. */
+.percentage small {
+
+  /* Définit la taille. */
+  font-size: 25px;
+
+  /* Utilise le rouge. */
+  color: #d40000;
+}
+
+
+/* Message sous le pourcentage. */
+.loader-center p {
+
+  /* Supprime la marge par défaut. */
+  margin: 12px 0 0;
+
+  /* Définit la taille. */
+  font-size: 14px;
+
+  /* Définit la hauteur des lignes. */
+  line-height: 1.5;
+
+  /* Définit la couleur. */
+  color: #475569;
+}
+
+
+/* Message final. */
+.complete-message {
+
+  /* Utilise le bleu de la charte. */
+  color: #0b63ce !important;
+
+  /* Rend le texte épais. */
+  font-weight: 700;
+}
+
+
+/* ========================================= */
+/* PETITS POINTS ANIMÉS */
+/* ========================================= */
+
+.orbit-dot {
+
+  /* Positionne chaque point. */
+  position: absolute;
+
+  /* Définit la largeur. */
+  width: 9px;
+
+  /* Définit la hauteur. */
+  height: 9px;
+
+  /* Rend le point circulaire. */
+  border-radius: 50%;
+
+  /* Ajoute une lumière. */
+  box-shadow:
+    0 0 14px currentColor;
+
+  /* Anime le point. */
+  animation:
+    pulse
+    1.6s
+    ease-in-out
+    infinite;
+}
+
+
+/* Point rouge. */
+.orbit-dot-1 {
+
+  /* Position verticale. */
+  top: 37px;
+
+  /* Position horizontale. */
+  right: 56px;
+
+  /* Définit la couleur. */
+  background: #d40000;
+
+  /* Définit la couleur de l'ombre. */
+  color: #d40000;
+}
+
+
+/* Point bleu. */
+.orbit-dot-2 {
+
+  /* Position verticale. */
+  bottom: 48px;
+
+  /* Position horizontale. */
+  left: 48px;
+
+  /* Définit la couleur. */
+  background: #0b63ce;
+
+  /* Définit la couleur de l'ombre. */
+  color: #0b63ce;
+
+  /* Décale l'animation. */
+  animation-delay: 0.4s;
+}
+
+
+/* Point noir. */
+.orbit-dot-3 {
+
+  /* Position verticale. */
+  top: 94px;
+
+  /* Position horizontale. */
+  left: 28px;
+
+  /* Définit la couleur. */
+  background: #111827;
+
+  /* Définit la couleur de l'ombre. */
+  color: #111827;
+
+  /* Décale l'animation. */
+  animation-delay: 0.8s;
+}
+
+
+/* ========================================= */
+/* BARRE DE PROGRESSION */
+/* ========================================= */
+
+.progress-bar {
+
+  /* Permet de positionner la lumière. */
+  position: relative;
+
+  /* Définit la largeur. */
+  width: min(430px, 78vw);
+
+  /* Définit la hauteur. */
+  height: 13px;
+
+  /* Rend la barre arrondie. */
+  border-radius: 999px;
+
+  /* Définit le fond. */
+  background: #e5e7eb;
+
+  /* Cache ce qui dépasse. */
+  overflow: hidden;
+
+  /* Ajoute une bordure. */
+  border:
+    1px solid
+    rgba(17, 24, 39, 0.08);
+
+  /* Ajoute une ombre intérieure. */
+  box-shadow:
+    inset
+    0 2px 5px
+    rgba(17, 24, 39, 0.08);
+
+  /* Anime l'apparition. */
+  animation:
+    fadeUp
+    0.9s
+    0.55s
+    ease-out
+    both;
+}
+
+
+/* Remplissage de la barre. */
+.progress-fill {
+
+  /* Définit la hauteur. */
+  height: 100%;
+
+  /* Mélange noir, rouge et bleu. */
+  background:
+    linear-gradient(
+      90deg,
+      #111827,
+      #d40000 52%,
+      #0b63ce
+    );
+
+  /* Arrondit le remplissage. */
+  border-radius: inherit;
+
+  /* Anime la largeur. */
+  transition:
+    width
+    0.08s
+    linear;
+}
+
+
+/* Reflet lumineux. */
+.progress-shine {
+
+  /* Positionne le reflet. */
+  position: absolute;
+
+  /* Position verticale. */
+  top: 0;
+
+  /* Position initiale. */
+  left: -30%;
+
+  /* Définit la largeur. */
+  width: 25%;
+
+  /* Définit la hauteur. */
+  height: 100%;
+
+  /* Crée un reflet blanc. */
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.75),
+      transparent
+    );
+
+  /* Fait bouger le reflet. */
+  animation:
+    shine
+    2.2s
+    linear
+    infinite;
+}
+
+
+/* ========================================= */
+/* STATUT */
+/* ========================================= */
+
+.loading-status {
+
+  /* Utilise Flexbox. */
+  display: flex;
+
+  /* Centre verticalement. */
+  align-items: center;
+
+  /* Ajoute un espace. */
+  gap: 9px;
+
+  /* Définit la taille. */
+  font-size: 13px;
+
+  /* Définit la couleur. */
+  color: #475569;
+
+  /* Anime l'apparition. */
+  animation:
+    fadeUp
+    0.9s
+    0.65s
+    ease-out
+    both;
+}
+
+
+/* Petit point du statut. */
+.status-dot {
+
+  /* Définit la largeur. */
+  width: 8px;
+
+  /* Définit la hauteur. */
+  height: 8px;
+
+  /* Rend le point rond. */
+  border-radius: 50%;
+
+  /* Utilise le rouge. */
+  background: #d40000;
+
+  /* Anime le point. */
+  animation:
+    pulse
+    1.3s
+    ease-in-out
+    infinite;
+}
+
+
+/* Statut lorsque le chargement est terminé. */
+.loading-status.complete {
+
+  /* Passe le texte en bleu. */
+  color: #0b63ce;
+}
+
+
+/* Point final bleu. */
+.loading-status.complete .status-dot {
+
+  /* Utilise le bleu. */
+  background: #0b63ce;
+}
+
+
+/* ========================================= */
+/* PIED DE PAGE */
+/* ========================================= */
+
+.footer-text {
+
+  /* Supprime la marge par défaut. */
+  margin: 0;
+
+  /* Définit la taille. */
+  font-size: 11px;
+
+  /* Espace les lettres. */
+  letter-spacing: 0.08em;
+
+  /* Définit la couleur. */
+  color: #64748b;
+
+  /* Anime l'apparition. */
+  animation:
+    fadeUp
+    0.9s
+    0.75s
+    ease-out
+    both;
+}
+
+
+/* ========================================= */
+/* ANIMATIONS DES FORMES D'ARRIÈRE-PLAN */
+/* ========================================= */
+
+/* Animation de la forme rouge en haut à gauche. */
+@keyframes floatOne {
+
+  /* Position de départ. */
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  /* Déplacement vers la droite et le bas. */
+  25% {
+    transform:
+      translate(100px, 70px)
+      rotate(45deg)
+      scale(1.12);
+  }
+
+  /* Déplacement vers la droite et le haut. */
+  50% {
+    transform:
+      translate(180px, -20px)
+      rotate(100deg)
+      scale(0.92);
+  }
+
+  /* Retour vers la gauche et le bas. */
+  75% {
+    transform:
+      translate(70px, 120px)
+      rotate(160deg)
+      scale(1.15);
+  }
+
+  /* Retour à la position initiale. */
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(220deg)
+      scale(1);
+  }
+}
+
+
+/* Animation de la forme bleue en haut à droite. */
+@keyframes floatTwo {
+
+  /* Position de départ. */
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  /* Déplacement vers la gauche et le bas. */
+  25% {
+    transform:
+      translate(-100px, 90px)
+      rotate(-45deg)
+      scale(1.15);
+  }
+
+  /* Déplacement vers la gauche et le haut. */
+  50% {
+    transform:
+      translate(-180px, 20px)
+      rotate(-100deg)
+      scale(0.90);
+  }
+
+  /* Déplacement vers la droite et le bas. */
+  75% {
+    transform:
+      translate(-70px, 140px)
+      rotate(-160deg)
+      scale(1.12);
+  }
+
+  /* Retour à la position initiale. */
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(-220deg)
+      scale(1);
+  }
+}
+
+
+/* Animation de la forme rouge en bas à gauche. */
+@keyframes floatThree {
+
+  /* Position de départ. */
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  /* Déplacement vers la droite et le haut. */
+  25% {
+    transform:
+      translate(120px, -90px)
+      rotate(60deg)
+      scale(1.18);
+  }
+
+  /* Déplacement plus important vers la droite. */
+  50% {
+    transform:
+      translate(210px, -20px)
+      rotate(120deg)
+      scale(0.88);
+  }
+
+  /* Déplacement vers la gauche et le haut. */
+  75% {
+    transform:
+      translate(80px, -140px)
+      rotate(180deg)
+      scale(1.15);
+  }
+
+  /* Retour à la position initiale. */
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(240deg)
+      scale(1);
+  }
+}
+
+
+/* Animation de la forme bleue en bas à droite. */
+@keyframes floatFour {
+
+  /* Position de départ. */
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  /* Déplacement vers la gauche et le haut. */
+  25% {
+    transform:
+      translate(-120px, -100px)
+      rotate(-55deg)
+      scale(1.15);
+  }
+
+  /* Déplacement important vers la gauche. */
+  50% {
+    transform:
+      translate(-200px, -30px)
+      rotate(-110deg)
+      scale(0.9);
+  }
+
+  /* Déplacement vers la droite et le haut. */
+  75% {
+    transform:
+      translate(-70px, -150px)
+      rotate(-170deg)
+      scale(1.18);
+  }
+
+  /* Retour à la position initiale. */
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(-240deg)
+      scale(1);
+  }
+}
+
+
+/* ========================================= */
+/* RESPONSIVE MOBILE */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
+  /* Réduit le logo sur petit écran. */
+  .company-logo {
+    width: min(330px, 82vw);
+  }
+
+  /* Réduit le loader sur mobile. */
+  .loader-wrapper {
+    transform: scale(0.86);
+    margin: -18px 0;
+  }
+
+  /* Réduit le titre BIENVENUE. */
+  .welcome {
+    gap: 9px;
+    font-size: 11px;
+  }
+
+  /* Réduit les lignes décoratives. */
+  .welcome-line {
+    width: 35px;
+  }
+}

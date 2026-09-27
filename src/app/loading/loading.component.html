@@ -1,0 +1,204 @@
+<!-- Conteneur principal de la page de chargement. -->
+<main class="loading-page">
+
+  <!-- Décorations lumineuses en arrière-plan. -->
+  <div class="background-shapes" aria-hidden="true">
+
+    <!-- Première forme décorative. -->
+    <span class="shape shape-1"></span>
+
+    <!-- Deuxième forme décorative. -->
+    <span class="shape shape-2"></span>
+
+    <!-- Troisième forme décorative. -->
+    <span class="shape shape-3"></span>
+
+    <!-- Quatrième forme décorative. -->
+    <span class="shape shape-4"></span>
+
+  </div>
+
+
+  <!-- Contenu principal de la page. -->
+  <section class="loading-container">
+
+
+    <!-- =============================== -->
+    <!-- LOGO BIG DATA CENTER & AI -->
+    <!-- =============================== -->
+
+    <div class="logo-container">
+
+      <!-- Affiche le logo officiel de BIG DATA CENTER. -->
+      <img
+        src="/logo-bigdata-center.jpeg"
+        alt="BIG DATA CENTER & AI"
+        class="company-logo">
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- TITRE BIENVENUE -->
+    <!-- =============================== -->
+
+    <div class="welcome">
+
+      <!-- Ligne décorative gauche. -->
+      <span class="welcome-line"></span>
+
+      <!-- Texte de bienvenue. -->
+      <span>BIENVENUE</span>
+
+      <!-- Ligne décorative droite. -->
+      <span class="welcome-line"></span>
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- CERCLE DE CHARGEMENT -->
+    <!-- =============================== -->
+
+    <div class="loader-wrapper">
+
+      <!-- Halo lumineux derrière le cercle. -->
+      <div class="loader-halo"></div>
+
+      <!-- Grand anneau extérieur animé. -->
+      <div class="outer-ring"></div>
+
+      <!-- Anneau en pointillés. -->
+      <div class="dashed-ring"></div>
+
+
+      <!-- Cercle SVG de progression. -->
+      <svg
+        class="progress-circle"
+        viewBox="0 0 240 240"
+        aria-label="Progression du chargement">
+
+        <!-- Cercle gris servant de fond. -->
+        <circle
+          class="ring-background"
+          cx="120"
+          cy="120"
+          r="105">
+        </circle>
+
+        <!-- Cercle rouge indiquant la progression. -->
+        <circle
+          class="ring-progress"
+          cx="120"
+          cy="120"
+          r="105"
+          [style.stroke-dasharray]="circumference"
+          [style.stroke-dashoffset]="strokeDashoffset">
+        </circle>
+
+      </svg>
+
+
+      <!-- =============================== -->
+      <!-- CONTENU AU CENTRE DU CERCLE -->
+      <!-- =============================== -->
+
+      <div class="loader-center">
+
+        <!-- Pourcentage actuel. -->
+        <div class="percentage">
+
+          <!-- Affiche le nombre. -->
+          <span>{{ progress }}</span>
+
+          <!-- Affiche le symbole %. -->
+          <small>%</small>
+
+        </div>
+
+
+        <!-- Message pendant le chargement. -->
+        <p *ngIf="!isComplete">
+          Préparation de<br>
+          votre espace...
+        </p>
+
+
+        <!-- Message lorsque le chargement est terminé. -->
+        <p
+          *ngIf="isComplete"
+          class="complete-message">
+
+          Prêt !
+
+        </p>
+
+      </div>
+
+
+      <!-- =============================== -->
+      <!-- PETITS POINTS ANIMÉS -->
+      <!-- =============================== -->
+
+      <!-- Premier point rouge. -->
+      <span class="orbit-dot orbit-dot-1"></span>
+
+      <!-- Deuxième point bleu. -->
+      <span class="orbit-dot orbit-dot-2"></span>
+
+      <!-- Troisième point noir. -->
+      <span class="orbit-dot orbit-dot-3"></span>
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- BARRE DE PROGRESSION -->
+    <!-- =============================== -->
+
+    <div class="progress-bar">
+
+      <!-- Remplissage selon le pourcentage. -->
+      <div
+        class="progress-fill"
+        [style.width.%]="progress">
+      </div>
+
+      <!-- Effet lumineux qui traverse la barre. -->
+      <div class="progress-shine"></div>
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- STATUT DU CHARGEMENT -->
+    <!-- =============================== -->
+
+    <div
+      class="loading-status"
+      [class.complete]="isComplete">
+
+      <!-- Petit indicateur animé. -->
+      <span class="status-dot"></span>
+
+      <!-- Texte dynamique. -->
+      <span>
+        {{ isComplete
+          ? 'Chargement terminé'
+          : 'Chargement en cours...' }}
+      </span>
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- PIED DE PAGE -->
+    <!-- =============================== -->
+
+    <p class="footer-text">
+      BIG DATA CENTER &amp; AI · Hightech Solutions
+    </p>
+
+  </section>
+
+</main>
